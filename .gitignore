@@ -4,11 +4,11 @@ node_modules
 # Build output
 dist
 
-# VSCode settings (opcional)
-.vscode
-
 # MacOS files
 .DS_Store
+
+# VSCode settings
+.vscode
 
 # Logs
 npm-debug.log
