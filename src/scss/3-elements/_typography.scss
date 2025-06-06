@@ -1,0 +1,21 @@
+@use '../0-settings/' as settings;
+@use '../1-tools/' as tools;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Syne:wght@400..800&display=swap');
+
+
+$font-family-primary: 'Syne', sans-serif;
+$font-family-secondary: 'Nunito', sans-serif;
+
+
+.h1 {
+  @include tools.h1;
+  font-family: $font-family-primary;
+  color: settings.$color-primary-text;
+}
+
+.h2 {
+  @include tools.h2;
+  font-family: $font-family-secondary;
+  color: settings.$color-secondary-text;
+}

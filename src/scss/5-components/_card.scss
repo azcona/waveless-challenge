@@ -1,0 +1,94 @@
+@use '../0-settings/' as settings;
+@use '../1-tools/' as tools;
+@use '../3-elements/' as elements;
+
+.container-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(settings.$min-width-card, 1fr));
+  gap: settings.$gap-container-cards;
+  align-items: center;
+  width: 100%;
+  background-color: settings.$color-white;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: settings.$color-white;
+  border-radius: settings.$border-radius-card;
+  box-shadow: settings.$box-shadow-card;
+  position: relative;
+  overflow: hidden;
+
+  & .badge {
+    position: absolute;
+    right: settings.$padding-card; 
+    top: settings.$padding-card;
+    z-index: 1;
+  }
+
+  &__top {
+    height: 150px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;  
+    background-repeat: no-repeat;
+  }
+
+  &__body {
+    @include tools.flex-column-center;
+    align-items: flex-start;
+    width: 100%;
+    padding: settings.$padding-card;
+  }
+
+  &__title {
+    font-family: elements.$font-family-secondary;
+    font-size: settings.$font-size-lg;
+    font-weight: 700;
+    line-height: settings.$font-size-lg;
+  }
+
+  &__subtitle {
+    font-family: elements.$font-family-primary;
+    font-size: settings.$font-size-md;
+    font-weight: 700;
+    color: settings.$color-secondary;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    background: settings.$color-background;
+    padding: settings.$padding-card;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+}
+
+.price {
+  @include tools.flex-column-center;
+  font-family: elements.$font-family-secondary;
+  font-size: settings.$font-size-lg;
+  font-weight: 700;
+
+  &__top {
+    color: settings.$color-primary-text;
+    font-family: elements.$font-family-secondary;
+    font-size: settings.$font-size-sm;
+    font-weight: 500;
+  }
+
+  &__bottom {
+    color: settings.$color-secondary;
+    font-size: settings.$font-size-md;
+  }
+}

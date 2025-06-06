@@ -1,0 +1,120 @@
+@use '../0-settings/' as settings;
+@use '../1-tools/' as tools;
+@use '../3-elements/' as elements;
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  background-color: settings.$color-background-dark;
+
+  &__slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  &__slide {
+    position: absolute;
+    @include tools.flex-column-center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 100%;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+
+    &.active {
+      left: 0;
+      opacity: 1;
+      z-index: 1;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: settings.$color-secondary-transparent; 
+      z-index: 0; 
+    }
+
+    .hero__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      z-index: -1;
+    }
+
+    .hero__info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: absolute;
+      z-index: 2;
+      gap: settings.$gap-hero-info;
+    }
+
+    .hero__title {
+      color: settings.$color-white;
+      font-family: elements.$font-family-primary;
+      font-size: settings.$font-size-xxl;
+      font-weight: 700;
+    }
+
+    .hero__text {
+      color: settings.$color-white;
+      font-family: elements.$font-family-secondary;
+      font-size: settings.$font-size-lg;
+      font-weight: 500;
+      text-align: center;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: settings.$color-secondary-transparent;
+    color:  settings.$color-white;
+    border: none;
+    padding: settings.$padding-hero-btn;
+    cursor: pointer;
+    z-index: 2;
+
+    &--prev {
+      left: 1rem;
+    }
+
+    &--next {
+      right: 1rem;
+    }
+  }
+
+  &__dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 2;
+
+    .hero__dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: settings.$color-white;
+      opacity: 0.6;
+      cursor: pointer;
+
+      &.active {
+        background: settings.$color-primary;
+        opacity: 1;
+      }
+    }
+  }
+}

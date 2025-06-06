@@ -1,0 +1,54 @@
+@use '../0-settings/' as settings;
+@use '../3-elements/' as elements;
+
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: settings.$gap-checkbox;
+  font-size: settings.$font-size-sm;
+  color: settings.$color-primary-text;
+
+  input[type="checkbox"] {
+    appearance: none;
+    width: settings.$size-checkbox;
+    height: settings.$size-checkbox;
+    border: 2px solid settings.$color-border;
+    border-radius: settings.$border-radius-sm;
+    background-color: settings.$color-white;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+
+    &:checked {
+      background-color: settings.$color-primary;
+      border-color: settings.$color-primary;
+    }
+
+    &:checked::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 6px;
+      width: 5px;
+      height: 10px;
+      border: solid settings.$color-white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px settings.$color-primary-light;
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+    user-select: none;
+    font-family: elements.$font-family-secondary;
+    font-size: settings.$font-size-sm;
+    color: settings.$color-primary-text;
+  }
+}

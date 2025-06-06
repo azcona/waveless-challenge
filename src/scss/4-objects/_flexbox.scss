@@ -1,0 +1,8 @@
+@use '../0-settings/' as settings;
+@use '../1-tools/' as tools;
+@use '../3-elements/' as elements;
+
+.flex {
+    display: flex;
+    gap: 1rem; 
+}

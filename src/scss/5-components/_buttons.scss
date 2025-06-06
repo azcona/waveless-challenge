@@ -1,0 +1,45 @@
+@use '../0-settings/' as settings;
+@use '../3-elements/' as elements;
+
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: settings.$border-radius-button;
+  padding: settings.$padding-button-md;
+  font-family: elements.$font-family-secondary;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+
+  &--primary {
+    background-color: settings.$color-primary;
+    color: settings.$color-white;
+
+    &:hover {
+      background-color: darken(settings.$color-primary, 5%);
+    }
+  }
+
+  &--secondary {
+    background-color: settings.$color-secondary;
+    color: settings.$color-white;
+
+    &:hover {
+      background-color: darken(settings.$color-secondary, 5%);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 2px solid settings.$color-secondary;
+    color: settings.$color-secondary;
+
+    &:hover {
+      background-color: rgba(settings.$color-secondary, 0.08);
+    }
+  }
+}

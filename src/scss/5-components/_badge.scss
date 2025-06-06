@@ -1,0 +1,16 @@
+@use '../0-settings/' as settings;
+@use '../3-elements/' as elements;
+
+.badge {
+  display: inline-block;
+  padding: settings.$padding-badge-md;
+  font-family: elements.$font-family-secondary;
+  font-size: settings.$font-size-sm;
+  font-weight: 800;
+  line-height: 1;
+  color: settings.$color-primary-text;
+  background-color: settings.$color-primary;
+  border-radius: settings.$border-radius-badge;
+  text-align: center;
+  white-space: nowrap;
+}

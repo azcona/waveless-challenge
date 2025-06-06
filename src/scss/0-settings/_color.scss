@@ -1,0 +1,27 @@
+$color-primary: #FF8F50;   
+$color-secondary: #622F60; 
+$color-secondary-transparent: rgba($color-secondary, 0.32);
+
+$color-primary-dark: #CC4900;
+$color-primary-focus: #B85C28;
+
+$color-white: #ffffff;
+$color-black: #2F222F;
+
+$color-background: #FBF6F4;
+$color-background-dark: #E0D9E0;
+$color-primary-text: #342E34;
+$color-secondary-text: #6B7D8D;
+
+$color-navbar: $color-white;
+$color-navbar-text: $color-primary-text;
+
+
+$box-shadow-card: 0px 4px 8px 0px rgba($color-black, 0.32);
+
+
+$color-primary-light: rgba($color-primary, 0.32);;
+$color-border: $color-secondary;
+$color-border-light: $color-primary-focus;
+
+$border-color-sidebar: $color-background-dark;
